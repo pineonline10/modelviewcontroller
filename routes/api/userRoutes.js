@@ -60,5 +60,8 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
-
+router.get('/test', (req, res) => {
+  console.log("Test route accessed");
+  res.send('User routes are working!');
+});
 module.exports = router;
