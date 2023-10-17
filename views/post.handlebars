@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... (head content) ... -->
+</head>
+<body>
+    <header>
+        <!-- ... (header content) ... -->
+    </header>
+    <main>
+        <article>
+            <h2>{{blogPost.title}}</h2>
+            <p>{{blogPost.content}}</p>
+            <p>Posted by {{blogPost.User.username}} on {{blogPost.createdAt}}</p>
+        </article>
+        <section>
+            <h3>Comments</h3>
+            {{#each comments}}
+            <div class="comment">
+                <p>{{content}}</p>
+                <p>Comment by {{User.username}} on {{createdAt}}</p>
+            </div>
+            {{/each}}
+        </section>
+        <section>
+            <h3>Add a Comment</h3>
+            <form action="/comment/{{blogPost.id}}" method="POST">
+                <label for="comment">Comment</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+                <button type="submit">Submit Comment</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
