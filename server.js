@@ -1,6 +1,6 @@
 const express = require('express');
 const session = require('express-session');
-const sequelize = require('./config/connection'); 
+const sequelize = require('./config/connection'); // Import your Sequelize connection
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,7 +16,7 @@ app.use(session({
 }));
 
 // Routes
-const routes = require('./routes'); // Import routes
+const routes = require('./routes');
 app.use(routes);
 
 // Start the server
